@@ -1,0 +1,43 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  height: 100vh;
+
+  background-color: red;
+}
+
+.sidebar {
+  grid-column: 1/2;
+  grid-row: 1/-1;
+
+  background-color: blue;
+}
+
+.header {
+  grid-column: 2/-1;
+  grid-row: 1/2;
+
+  background-color: green;
+}
+.header .top-right .prof-pic {
+  width: 2rem;
+  height: 2rem;
+  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F90%2F1d%2F45%2F901d45d05461495b1c0700ce47517135.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.header .bottom-left .big-prof-pic {
+  width: 3rem;
+  height: 3rem;
+  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F90%2F1d%2F45%2F901d45d05461495b1c0700ce47517135.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.main-content {
+  grid-column: 2/-1;
+  grid-row: 2/-1;
+
+  background-color: purple;
+}
