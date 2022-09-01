@@ -3,22 +3,89 @@
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(6, 1fr);
   height: 100vh;
-
-  background-color: red;
+  font-family: Helvetica;
+  background-color: #E2E8F0;
 }
 
 .sidebar {
   grid-column: 1/2;
   grid-row: 1/-1;
-
-  background-color: blue;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4rem 7fr 4fr;
+  background-color: #1992D4;
+}
+.sidebar .sidebar-logo {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 4rem;
+  align-items: center;
+  font-size: 1.5rem;
+}
+.sidebar .sidebar-logo i {
+  grid-column: 1/2;
+  justify-self: center;
+}
+.sidebar .sidebar-logo h1 {
+  grid-column: 2/3;
+}
+.sidebar .sidebar-tabs {
+  height: 100%;
+  display: grid;
+}
+.sidebar .sidebar-tabs i {
+  justify-self: center;
+}
+.sidebar .top-tabs {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-auto-rows: 2.2rem;
+  align-items: center;
+}
+.sidebar .bottom-tabs {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-auto-rows: 2.2rem;
+  align-items: center;
 }
 
 .header {
   grid-column: 2/-1;
   grid-row: 1/2;
-
-  background-color: green;
+  display: grid;
+  grid-template-columns: 3fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 1rem;
+  column-gap: 2rem;
+  background-color: white;
+  box-shadow: 2px 3px 5px rgb(159, 159, 159);
+}
+.header .top-left {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  align-self: start;
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  align-items: center;
+  height: 1.3rem;
+}
+.header .top-left i {
+  justify-self: center;
+}
+.header .top-left input {
+  background-color: #E2E8F0;
+  border-style: none;
+  border-radius: 0.75rem;
+  height: 100%;
+}
+.header .top-right {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  align-self: start;
+  display: grid;
+  grid-template-columns: 1fr 2fr 6fr;
+  align-items: center;
 }
 .header .top-right .prof-pic {
   width: 2rem;
@@ -26,6 +93,18 @@
   background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F90%2F1d%2F45%2F901d45d05461495b1c0700ce47517135.jpg);
   background-position: center;
   background-size: cover;
+  border-radius: 50%;
+}
+.header .top-right span {
+  font-weight: bold;
+}
+.header .bottom-left {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
 }
 .header .bottom-left .big-prof-pic {
   width: 3rem;
@@ -33,11 +112,180 @@
   background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F90%2F1d%2F45%2F901d45d05461495b1c0700ce47517135.jpg);
   background-position: center;
   background-size: cover;
+  justify-self: center;
+  border-radius: 50%;
+}
+.header .bottom-left .header-msg {
+  font-size: 0.75rem;
+}
+.header .bottom-left .header-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.header .bottom-right {
+  grid-column: 3/-1;
+  grid-row: 2/3;
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+.header .bottom-right input {
+  width: 5.5rem;
+  height: 2.25rem;
+  border-radius: calc(2.25rem /2);
+  border-style: none;
+  background-color: #1992D4;
+  color: white;
 }
 
 .main-content {
   grid-column: 2/-1;
   grid-row: 2/-1;
+  display: grid;
+  grid-template: 1fr repeat(3, 3fr) 1fr / 6fr 2fr;
+  column-gap: 1rem;
+  padding: 1rem;
+}
+.main-content .y-projects {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: center;
+  font-size: 1.1rem;
+}
+.projects {
+  grid-column: 1/2;
+  grid-row: 2/5;
+  display: grid;
+  grid-template: repeat(3, 1fr) / 1fr 1fr;
+  gap: 1rem;
+  height: 100%;
+}
+.projects > div {
+  border-radius: 10px;
+  display: grid;
+  grid-template: 1fr 3fr 3fr/ 10px 1fr;
+  height: 10.1rem;
+  box-shadow: 2px 3px 5px rgb(159, 159, 159);
 
-  background-color: purple;
+  background-color: white;
+}
+.projects > div > .left-acc {
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  background-color: #EEB32B;
+  border-radius: 10px 0 0 10px;
+}
+.projects > div > .card-content {
+  grid-column: 2/-1;
+  grid-row: 2/3;
+  padding-left: 1.5rem;
+}
+.projects > div > .card-content h3 {
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+}
+.projects > div > .card-content p {
+  color: gray;
+  font-size: 0.8rem;
+}
+.projects > div > .icons {
+  grid-column: 2/-1;
+  grid-row: 3/-1;
+  justify-self: end;
+  align-self: end;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+}
+.projects > div > .icons i {
+  padding-left: 0.75rem;
+}
+.main-content .annc {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  align-self: center;
+  font-size: 1.1rem;
+}
+.main-content .right-bar {
+  grid-column: 2/3;
+  grid-row: 2/5;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4fr 1fr 4fr;
+}
+.announcements {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 2px 3px 5px rgb(159, 159, 159);
+}
+.announcements .new-announcement h4 {
+  font-weight: bold;
+  padding-bottom: 0.25rem;
+}
+.announcements .new-announcement p {
+  font-size: 0.75rem;
+  color: gray;
+}
+.announcements hr {
+  width: 100%;
+  height: 1px;
+  border-style: none;
+  background-color: lightgray;
+}
+.main-content .right-bar .trend {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  font-size: 1.1rem;
+  align-self: center;
+}
+.trending {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  box-shadow: 2px 3px 5px rgb(159, 159, 159);
+}
+.trending > div {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 2fr;
+}
+.trending .trending-pic {
+  width: 2rem;
+  height: 2rem;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+  justify-self: end;
+}
+.trending .tegan {
+  background-image: url(images/bw1s7569-900.jpeg);
+}
+.trending .morgan {
+  background-image: url(images/cartoon_girl_thumb.jpeg);
+}
+.trending .kendall {
+  background-image: url(images/e39d32da006992b6720c7242d590ca78b4f442d8.jpg);
+}
+.trending .alex {
+  background-image: url(images/MV5BODU3Nzk1YjUtNmY3Mi00NGRlLTkwMWYtMGQxNmQ0MmM3MzhkXkEyXkFqcGdeQXVyMTM0MjAwMTI1._V1_.jpg);
+}
+.trending h4 {
+  padding-bottom: 0.25rem;
+}
+.trending p {
+  color: gray;
 }
